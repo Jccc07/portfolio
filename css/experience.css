@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a1f3d;
+    color: #ffffff;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+/* Background Video */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 31, 61, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.5);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00d9ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0;
+}
+
+.nav-links li {
+    border-right: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.nav-links li:last-child {
+    border-right: none;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    display: block;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d9ff, #00ff88);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00d9ff;
+    transform: translateY(-2px);
+}
+
+/* Content Section */
+.content-section {
+    margin-top: 80px;
+    height: calc(100vh - 130px);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    text-align: center;
+    background: linear-gradient(45deg, #00d9ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.experience-card {
+    background: rgba(10, 31, 61, 0.6);
+    border-radius: 15px;
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    animation: slideIn 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+}
+
+.experience-card:hover {
+    transform: scale(1.05);
+    border-color: #00ff88;
+    box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4);
+}
+
+.exp-image {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(135deg, #00d9ff, #00ff88);
+    padding: 2px;
+    overflow: hidden;
+}
+
+.exp-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exp-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.exp-title {
+    font-size: 1rem;
+    color: #00d9ff;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.exp-company {
+    font-size: 0.85rem;
+    color: #00ff88;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.exp-date {
+    font-size: 0.8rem;
+    color: #b0e0e6;
+    margin-bottom: 0.8rem;
+    font-style: italic;
+}
+
+.exp-description {
+    background: rgba(0, 217, 255, 0.05);
+    padding: 0.8rem;
+    border-radius: 8px;
+    border-left: 3px solid #00ff88;
+    flex-grow: 1;
+}
+
+.exp-description p {
+    color: #b0e0e6;
+    line-height: 1.4;
+    font-size: 0.8rem;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(10, 31, 61, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.footer p {
+    color: #00d9ff;
+    font-size: 0.9rem;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -15,7 +15,6 @@ viewButtons.forEach(btn => {
         e.stopPropagation();
         const card = this.closest('.project-card');
         const title = card.querySelector('.project-title').textContent;
-        alert(`Viewing details for: ${title}\n\nYou can add a modal or link to project details here!`);
     });
 });
 
